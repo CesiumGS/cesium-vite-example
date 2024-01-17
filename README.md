@@ -4,8 +4,22 @@ A minimal recommended setup for an applications using [Cesium](https://cesium.co
 
 ## Running this application
 
-- `npm install`
-- `npm run dev`
+```sh
+npm install
+npm run dev
+# for the built version
+npm run build
+npm run preview
+```
+
+Navigate to `localhost:5174`. For the built version navigate to `localhost:4174`
+
+## Available scripts
+
+- `npm run eslint`, `npm run prettier`, `npm run prettier-check` - Lint this project to maintain code style
+- `npm run dev` - Starts the Vite development server server at `localhost:5174`
+- `npm run build` - Runs the Vite build
+- `npm run preview` - Starts a local preview of the production build using [`vite preview`](https://vitejs.dev/guide/cli.html#vite-preview)
 
 ## Requiring Cesium in your application
 
