@@ -65,6 +65,18 @@ viteStaticCopy({
 }),
 ```
 
+Also instead of importing this css file in your project:
+
+```js
+import "cesium/Build/Cesium/Widgets/widgets.css";
+```
+
+you will need to update the import to:
+
+```js
+import "@cesium/engine/Source/Widget/CesiumWidget.css";
+```
+
 ## Contributions
 
 Pull requests are appreciated. Please use the same [Contributor License Agreement (CLA)](https://github.com/CesiumGS/cesium/blob/master/CONTRIBUTING.md) used for [Cesium](https://cesium.com/).
