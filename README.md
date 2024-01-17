@@ -14,14 +14,14 @@ We recommend [importing named exports](https://developer.mozilla.org/en-US/docs/
 ### Import named modules from Cesium
 
 ```js
-import { Color } from 'cesium';
+import { Color } from "cesium";
 var c = Color.fromRandom();
 ```
 
 ### Import Cesium static asset files
 
 ```js
-import 'cesium/Build/Cesium/Widgets/widgets.css';
+import "cesium/Build/Cesium/Widgets/widgets.css";
 ```
 
 ## Cesium sub-packages

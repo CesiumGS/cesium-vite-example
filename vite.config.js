@@ -1,10 +1,10 @@
-import { defineConfig } from 'vite';
-import { viteStaticCopy } from 'vite-plugin-static-copy';
+import { defineConfig } from "vite";
+import { viteStaticCopy } from "vite-plugin-static-copy";
 
-const cesiumSource = 'node_modules/cesium/Build/Cesium';
+const cesiumSource = "node_modules/cesium/Build/Cesium";
 // this is the base url for static files that CesiumJS needs to load
 // Not required but if it's set remember to update CESIUM_BASE_URL as shown below
-const cesiumBaseUrl = 'cesiumStatic';
+const cesiumBaseUrl = "cesiumStatic";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -28,7 +28,7 @@ export default defineConfig({
   ],
   build: {
     rollupOptions: {
-      external: ['http', 'https', 'url', 'zlib'],
+      external: ["http", "https", "url", "zlib"],
     },
   },
 });
