@@ -2,11 +2,13 @@
 
 A minimal recommended setup for an applications using [Cesium](https://cesium.com) with [Vite](https://vitejs.dev/).
 
-If you are using Webpack instead of Vite check out our [`cesium-webpack-example`](https://github.com/CesiumGS/cesium-webpack-example) repo.
+If you are using Webpack instead of Vite, check out our [`cesium-webpack-example`](https://github.com/CesiumGS/cesium-webpack-example) repo.
 
-## Vue/React/Svelte/etc support
+## UI framework support
 
-This example was created to be the lowest common denominator in the Vite ecosystem. The same configuration has been tested with other UI frameworks in Vite with a small modification of adding the relavent plugin and should work the same regardless. If you run into framework specific problems please [open an issue](https://github.com/CesiumGS/cesium-vite-example/issues/new) and we can try and address it.
+This example was created to be the lowest common denominator in the Vite ecosystem and targets Vanilla JS. The same configuration has been tested with other UI frameworks in Vite (like Vue) with a small modification of adding the relevent plugin and should work the same regardless. If you run into framework specific problems please [open an issue](https://github.com/CesiumGS/cesium-vite-example/issues/new).
+
+If you create a new Vite project with [`create-vite`](https://vitejs.dev/guide/#scaffolding-your-first-vite-project) you should be able to combine the `plugins` that it adds in `vite.config.js` with the ones in this example configuration and it should work.
 
 ## Running this application
 
@@ -18,12 +20,14 @@ npm run build
 npm run preview
 ```
 
-Navigate to `localhost:5174`. For the built version navigate to `localhost:4174`
+Navigate to `localhost:5173`. For the built version navigate to `localhost:4173`
 
 ## Available scripts
 
-- `npm run eslint`, `npm run prettier`, `npm run prettier-check` - Lint this project to maintain code style
-- `npm run dev` - Starts the Vite development server server at `localhost:5174`
+- `npm run eslint` - Lint this project
+- `npm run prettier` - Format all the code to a consistant style
+- `npm run prettier-check` - Check the format of code but do not change it
+- `npm run dev` - Starts the Vite development server server at `localhost:5173`
 - `npm run build` - Runs the Vite build
 - `npm run preview` - Starts a local preview of the production build using [`vite preview`](https://vitejs.dev/guide/cli.html#vite-preview)
 
@@ -71,15 +75,13 @@ viteStaticCopy({
 }),
 ```
 
-Also instead of importing this css file in your project:
+Additionally you will have to import a different widgets css file in `src/main.js`.
 
 ```js
+// Change this import
 import "cesium/Build/Cesium/Widgets/widgets.css";
-```
 
-you will need to update the import to:
-
-```js
+// To this one from the cesium/engine package
 import "@cesium/engine/Source/Widget/CesiumWidget.css";
 ```
 
