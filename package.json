@@ -1,0 +1,50 @@
+{
+  "name": "cesiumjs-vite-example",
+  "version": "1.0.0",
+  "description": "The minimal recommended setup for an app using Cesium with Vite.",
+  "homepage": "https://cesium.com/platform/cesiumjs/",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Cesium GS, Inc.",
+    "url": "https://cesium.com"
+  },
+  "keywords": [
+    "cesium",
+    "CesiumJS",
+    "vite",
+    "example"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CesiumGS/cesium-vite-example.git"
+  },
+  "type": "module",
+  "scripts": {
+    "prepare": "husky install",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "eslint": "eslint \"./**/*.js\" \"./**/*.html\" --cache --quiet",
+    "prettier": "prettier --write --no-config \"**/*\"",
+    "prettier-check": "prettier --check --no-config \"**/*\""
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-cesium": "^10.0.2",
+    "eslint-plugin-es": "^4.1.0",
+    "eslint-plugin-html": "^7.1.0",
+    "husky": "^8.0.3",
+    "prettier": "^3.2.4",
+    "vite": "^5.0.8",
+    "vite-plugin-static-copy": "^1.0.0"
+  },
+  "dependencies": {
+    "cesium": "^1.113.0"
+  },
+  "lint-staged": {
+    "*.{js,html}": [
+      "eslint --cache --quiet",
+      "prettier --write --no-config"
+    ]
+  }
+}
