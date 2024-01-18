@@ -6,16 +6,20 @@ If you are using Webpack instead of Vite, check out our [`cesium-webpack-example
 
 ## UI framework support
 
-This example was created to be the lowest common denominator in the Vite ecosystem and targets Vanilla JS. The same configuration has been tested with other UI frameworks in Vite (like Vue) with a small modification of adding the relevent plugin and should work the same regardless. If you run into framework specific problems please [open an issue](https://github.com/CesiumGS/cesium-vite-example/issues/new).
+This example was created to be the lowest common denominator in the Vite ecosystem and targets Vanilla JS. The same configuration has been tested with other UI frameworks in Vite (like Vue) by adding the relevant plugin. If you run into framework specific problems please [open an issue](https://github.com/CesiumGS/cesium-vite-example/issues/new).
 
-If you create a new Vite project with [`create-vite`](https://vitejs.dev/guide/#scaffolding-your-first-vite-project) you should be able to combine the `plugins` that it adds in `vite.config.js` with the ones in this example configuration and it should work.
+If you create a new Vite project with [`create-vite`](https://vitejs.dev/guide/#scaffolding-your-first-vite-project) you can combine the `plugins` that it adds in `vite.config.js` with the ones in this example configuration.
 
 ## Running this application
 
 ```sh
 npm install
 npm run dev
-# for the built version
+```
+
+For the built, production version
+
+```sh
 npm run build
 npm run preview
 ```
@@ -28,7 +32,7 @@ Navigate to `localhost:5173`. For the built version navigate to `localhost:4173`
 - `npm run prettier` - Format all the code to a consistant style
 - `npm run prettier-check` - Check the format of code but do not change it
 - `npm run dev` - Starts the Vite development server server at `localhost:5173`
-- `npm run build` - Runs the Vite build
+- `npm run build` - Runs the Vite production build
 - `npm run preview` - Starts a local preview of the production build using [`vite preview`](https://vitejs.dev/guide/cli.html#vite-preview)
 
 ## Requiring Cesium in your application
