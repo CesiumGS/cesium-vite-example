@@ -89,6 +89,20 @@ import "cesium/Build/Cesium/Widgets/widgets.css";
 import "@cesium/engine/Source/Widget/CesiumWidget.css";
 ```
 
+## CesiumJS before version `1.114`
+
+If you are using a version of CesiumJS before `1.114` you will need to modify the config to tell it to ignore some external node dependencies. Add the `build` section below:
+
+```js
+  build: {
+    rollupOptions: {
+      external: ["http", "https", "url", "zlib"],
+    },
+  },
+```
+
+See cesium PR [#11773](https://github.com/CesiumGS/cesium/pull/11773) for more information
+
 ## Contributions
 
 Pull requests are appreciated. Please use the same [Contributor License Agreement (CLA)](https://github.com/CesiumGS/cesium/blob/master/CONTRIBUTING.md) used for [Cesium](https://cesium.com/).
