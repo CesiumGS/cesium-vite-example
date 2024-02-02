@@ -26,9 +26,4 @@ export default defineConfig({
       ],
     }),
   ],
-  build: {
-    rollupOptions: {
-      external: ["http", "https", "url", "zlib"],
-    },
-  },
 });
