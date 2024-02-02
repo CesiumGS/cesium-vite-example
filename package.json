@@ -39,7 +39,7 @@
     "vite-plugin-static-copy": "^1.0.0"
   },
   "dependencies": {
-    "cesium": "^1.113.0"
+    "cesium": "^1.114.0"
   },
   "lint-staged": {
     "*.{js,html}": [
