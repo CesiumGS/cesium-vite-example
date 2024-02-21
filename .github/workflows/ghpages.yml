@@ -1,5 +1,9 @@
 name: Github Pages Deploy
-
+# enable publish to git hub pages
+#   repository - settings - pages > Source > Github Actions
+# Troubleshooting:
+#     you may need to enable repository|organizations - settings - actions- general
+#           > Workflow Permissions > Read and Write Permissions
 on:
   push:
     branches:
