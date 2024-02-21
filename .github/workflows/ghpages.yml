@@ -1,0 +1,41 @@
+name: Github Pages Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+      - run: npm install -g  yarn
+      - run: yarn install
+      - name: Build project
+        run: yarn build --base=/${{ github.event.repository.name }}
+      - name: Configure Pages
+        uses:
+          actions/configure-pages@v4
+      - name: Upload production-ready build files
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+
+
