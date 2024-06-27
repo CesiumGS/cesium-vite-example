@@ -1,4 +1,4 @@
-# cesium-vite-example
+# cesium-vite
 
 A minimal recommended setup for an applications using [Cesium](https://cesium.com) with [Vite](https://vitejs.dev/).
 
