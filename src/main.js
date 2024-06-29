@@ -3,17 +3,31 @@ import {
   Math as CesiumMath,
   Terrain,
   Viewer,
+  Ion,
   createOsmBuildingsAsync,
 } from "cesium";
 import "cesium/Build/Cesium/Widgets/widgets.css";
 import "./style.css";
 
-// Initialize the Cesium Viewer in the HTML element with the `cesiumContainer` ID.
+Ion.defaultAccessToken =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIwZTJiMWEzMS01NTRkLTRlNGItYWRjOS0zNDU4NzQzMTMzNmYiLCJpZCI6ODA5MzgsImlhdCI6MTY0MzI5NjkxOH0.YqLHrHZ7JW55Ndbx5ZUEeBQ3oGnDNnbrnP3dn3AB7TE";
+
 const viewer = new Viewer("cesiumContainer", {
   terrain: Terrain.fromWorldTerrain(),
+  skyBox: false,
+  skyAtmosphere: false,
+  infoBox: false,
+  animation: false,
+  baseLayerPicker: false,
+  navigationHelpButton: false,
+  sceneModePicker: false,
+  homeButton: false,
+  geocoder: false,
+  fullscreenButton: false,
+  timeline: false,
+  creditContainer: document.createElement("none"),
 });
 
-// Fly the camera to San Francisco at the given longitude, latitude, and height.
 viewer.camera.flyTo({
   destination: Cartesian3.fromDegrees(-122.4175, 37.655, 400),
   orientation: {
@@ -22,7 +36,6 @@ viewer.camera.flyTo({
   },
 });
 
-// Add Cesium OSM Buildings, a global 3D buildings layer.
 createOsmBuildingsAsync().then((buildingTileset) => {
   viewer.scene.primitives.add(buildingTileset);
 });
