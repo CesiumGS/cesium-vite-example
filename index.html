@@ -4,7 +4,17 @@
     <meta charset="utf-8" />
   </head>
   <body>
-    <div id="cesiumContainer"></div>
-    <script type="module" src="/src/main.js"></script>
+    <!-- <div id="cesiumContainer"></div> -->
+    <div id="cesiumContainer" class="fullSize">
+      <!-- <a href="https://www.linkedin.com/company/geo-sin/" style="position:absolute;bottom:10px;right:20px;left:0;top:0;z-index:999;"><img src="src\pics\logo_landscape.png" alt="Spatial Intelligence Network logo"></a> -->
+    </div>
+    <div id="loadingOverlay"><h1>Loading...</h1></div>
+    <!-- <div id="toolbar">
+      <div id="pickReport">
+        <div id="pickedCoordinate">Sample center</div>
+        <div id="pickedColor"></div>
+      </div>
+    </div> -->
+    <script type="module" src="/src/voxellayer.js"></script>
   </body>
 </html>
