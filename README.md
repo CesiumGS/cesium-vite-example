@@ -59,10 +59,26 @@ CesiumJS requires a few static files to be hosted on your server, like web worke
 ```js
 viteStaticCopy({
   targets: [
-    { src: `${cesiumSource}/ThirdParty`, dest: cesiumBaseUrl },
-    { src: `${cesiumSource}/Workers`, dest: cesiumBaseUrl },
-    { src: `${cesiumSource}/Assets`, dest: cesiumBaseUrl },
-    { src: `${cesiumSource}/Widgets`, dest: cesiumBaseUrl },
+    {
+      src: `${cesiumSource}/ThirdParty`,
+      dest: cesiumBaseUrl,
+      rename: { stripBase: 4 },
+    },
+    {
+      src: `${cesiumSource}/Workers`,
+      dest: cesiumBaseUrl,
+      rename: { stripBase: 4 },
+    },
+    {
+      src: `${cesiumSource}/Assets`,
+      dest: cesiumBaseUrl,
+      rename: { stripBase: 4 },
+    },
+    {
+      src: `${cesiumSource}/Widgets`,
+      dest: cesiumBaseUrl,
+      rename: { stripBase: 4 },
+    },
   ],
 }),
 ```
@@ -72,9 +88,21 @@ However if you only install `@cesium/engine` then you should change the paths in
 ```js
 viteStaticCopy({
   targets: [
-    { src: 'node_modules/@cesium/engine/Build/Workers', dest: cesiumBaseUrl },
-    { src: 'node_modules/@cesium/engine/Build/ThirdParty', dest: cesiumBaseUrl },
-    { src: 'node_modules/@cesium/engine/Source/Assets', dest: cesiumBaseUrl },
+    {
+      src: "node_modules/@cesium/engine/Build/Workers",
+      dest: cesiumBaseUrl,
+      rename: { stripBase: 4 },
+    },
+    {
+      src: "node_modules/@cesium/engine/Build/ThirdParty",
+      dest: cesiumBaseUrl,
+      rename: { stripBase: 4 },
+    },
+    {
+      src: "node_modules/@cesium/engine/Source/Assets",
+      dest: cesiumBaseUrl,
+      rename: { stripBase: 4 },
+    },
   ],
 }),
 ```
